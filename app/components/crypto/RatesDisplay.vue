@@ -8,7 +8,7 @@ const lastUpdatedString = computed(() => {
 </script>
 
 <template>
-  <UCard class="w-full">
+  <UCard class="w-full h-min">
     <template #header>
       <h2 class="text-base md:text-lg lg:text-xl font-medium">
         Exchange Rates

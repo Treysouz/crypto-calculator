@@ -1,3 +1,7 @@
+<script setup lang="ts">
+const currentYear = new Date().getFullYear()
+</script>
+
 <template>
   <div class="flex flex-col min-w-80">
     <UHeader :toggle="false">
@@ -14,7 +18,7 @@
     <UFooter>
       <template #left>
         <p class="text-sm text-muted">
-          Built with Nuxt UI by Tremayne Souza • © {{ new Date().getFullYear() }}
+          Built by Tremayne Souza • © {{ currentYear }}
         </p>
       </template>
 

@@ -34,8 +34,8 @@ export const useExchangeRates = () => {
       lastUpdatedAt.value = new Date()
       return results
     },
-    /** Stale time set to 30 seconds to balance freshness of data with avoiding unnecessary calls */
-    staleTime: 30000,
+    /** Stale time set to 5 seconds to balance freshness of data with avoiding unnecessary calls */
+    staleTime: 5000,
     refetchOnWindowFocus: true
   })
 

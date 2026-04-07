@@ -24,7 +24,6 @@ defineProps<Props>()
       :step="0.01"
       class="w-full"
       :invert-wheel-change="true"
-      :default-value="0"
       :format-options="{ style: 'currency', currency: 'USD' }"
       :min="0"
     />

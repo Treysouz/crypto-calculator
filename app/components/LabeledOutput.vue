@@ -38,20 +38,29 @@ const descriptionId = `${props.outputId}-description`
         {{ description }}
       </p>
     </div>
-    <USkeleton
-      v-if="isLoading"
-      class="rounded-md py-1.5 px-2.5 ring ring-accented h-8 lg:h-10 w-full"
-    />
+
     <output
-      v-else
       :id="outputId"
       :for="outputFor"
       :name="outputName"
       :aria-describedby="description ? descriptionId : undefined"
-      class="rounded-md py-1.5 px-2.5 ring ring-accented h-8 lg:h-10 w-full flex flex-row justify-between space-x-4"
-    ><span>{{ value }}</span> <span
-      v-if="suffix"
-      class="font-medium"
-    >{{ suffix }}</span></output>
+      class="rounded-md  ring ring-accented h-8 lg:h-10 w-full "
+    >
+      <USkeleton
+        v-if="isLoading"
+        class="w-full h-full"
+        aria-label="Loading"
+        role="status"
+      />
+      <div
+        v-else
+        class="py-1.5 px-2.5 flex flex-row justify-between space-x-4"
+      >
+        <span>{{ value }}</span> <span
+          v-if="suffix"
+          class="font-medium"
+        >{{ suffix }}</span>
+      </div>
+    </output>
   </div>
 </template>

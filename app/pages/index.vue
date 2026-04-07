@@ -2,16 +2,12 @@
 const { error } = useExchangeRates()
 
 /** Whether to show error App Alert component */
-const showError = ref<boolean>(false)
+const showError = ref(false)
 
 /** Watch the error returned from useExchangeRates(). If there is an error value, show the App Alert component */
 watch(error, () => {
-  if (error.value) {
-    showError.value = true
-  }
+  showError.value = !!error.value
 })
-// 500285.665714647
-// 500006.375000017
 </script>
 
 <template>
@@ -23,7 +19,7 @@ watch(error, () => {
       title="Failed to Get Data"
       :description="error?.message"
     />
-    <div class="flex flex-row gap-4 sm:gap-6 lg:gap-8 flex-wrap md:flex-nowrap max-w-4xl">
+    <div class="flex flex-row gap-4 sm:gap-6 lg:gap-8 flex-wrap md:flex-nowrap max-w-md md:max-w-4xl">
       <CryptoRatesDisplay />
       <AllocationCalculator />
     </div>
