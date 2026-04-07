@@ -3,9 +3,9 @@ const { refresh, data, isLoading } = useExchangeRates()
 
 /** USD amount to allocate to BTC and ETH */
 const investibleAssets = ref(0)
-/** The amount of BTC crypto currency you would get for 70% of the amount of invested assets */
+/** The amount of BTC crypto currency you should get for 70% of the amount of invested assets */
 const btc = ref<string>('0.00')
-/** The amount of ETH crypto currency you would get for 30% of the amount of invested assets */
+/** The amount of ETH crypto currency you should get for 30% of the amount of invested assets */
 const eth = ref<string>('0.00')
 /** Last submitted investible assets */
 const holdings = ref('$0.00')
