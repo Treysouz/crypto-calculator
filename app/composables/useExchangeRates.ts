@@ -34,7 +34,7 @@ export const useExchangeRates = () => {
       lastUpdatedAt.value = new Date()
       return results
     },
-    /** Stale time set to 30 seconds based on general estimates of how often crypto exchange rates update */
+    /** Stale time set to 30 seconds to balance freshness of data with avoiding unnecessary calls */
     staleTime: 30000,
     refetchOnWindowFocus: true
   })
