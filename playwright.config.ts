@@ -4,11 +4,11 @@ export default defineConfig({
   testDir: './tests/e2e',
   use: {
     baseURL: 'http://localhost:3000',
-    ...devices['Desktop Chrome'],
+    ...devices['Desktop Chrome']
   },
   webServer: {
     command: 'pnpm dev',
     url: 'http://localhost:3000',
-    reuseExistingServer: !process.env.CI,
-  },
+    reuseExistingServer: !process.env.CI
+  }
 })
