@@ -17,7 +17,7 @@ A web app that takes in a USD amount as holdings and calculates the 70/30 split 
 
 ### Data & State Management
 
-- **[@pinia/colada](https://pinia-colada.esm.dev/)** - Data fetching and caching layer (Vue equivalent of TanStack Query)
+- **[@pinia/colada](https://pinia-colada.esm.dev/)** - Data fetching and caching layer
 
 ### Testing
 
@@ -30,7 +30,7 @@ A web app that takes in a USD amount as holdings and calculates the 70/30 split 
 - **[Prettier](https://prettier.io/)** - Code formatter
 
 ### AI Tools
-- **[Claude Code](https://code.claude.com/docs/en/overview)** - Agentic coding tool. Used as code reviewer, troubleshooter, and for app architecture ideas.
+- **[Claude Code](https://code.claude.com/docs/en/overview)** - Agentic coding tool. Used as code reviewer, documenter, troubleshooter, and for app architecture ideas
 
 ## Getting Started
 
