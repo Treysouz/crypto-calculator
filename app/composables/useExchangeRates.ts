@@ -39,11 +39,5 @@ export const useExchangeRates = () => {
     refetchOnWindowFocus: true
   })
 
-  /** Define lastUpdatedAt once client mounts to avoid hydration mismatch issues  */
-  onMounted(() => {
-    if (query.data.value) {
-      lastUpdatedAt.value = new Date()
-    }
-  })
   return { ...query, lastUpdatedAt }
 }

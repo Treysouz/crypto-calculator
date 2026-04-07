@@ -10,10 +10,12 @@ watch(error, () => {
     showError.value = true
   }
 })
+// 500285.665714647
+// 500006.375000017
 </script>
 
 <template>
-  <UContainer class="flex flex-col items-center gap-4 sm:gap-6 lg:gap-8 max-w-3xl">
+  <UContainer class="flex flex-col items-center gap-4 sm:gap-6 lg:gap-8">
     <AppAlert
       v-if="showError"
       v-model:open="showError"
@@ -21,7 +23,9 @@ watch(error, () => {
       title="Failed to Get Data"
       :description="error?.message"
     />
-    <CryptoRateDisplay />
-    <AllocationCalculator />
+    <div class="flex flex-row gap-4 sm:gap-6 lg:gap-8 flex-wrap md:flex-nowrap max-w-4xl">
+      <CryptoRatesDisplay />
+      <AllocationCalculator />
+    </div>
   </UContainer>
 </template>

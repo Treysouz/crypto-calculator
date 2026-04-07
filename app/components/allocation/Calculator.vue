@@ -4,9 +4,9 @@ const { refresh, data, isLoading } = useExchangeRates()
 /** USD amount to allocate to BTC and ETH */
 const investibleAssets = ref(0)
 /** The amount of BTC crypto currency you would get for 70% of the amount of invested assets  */
-const btc = computed(() => numberToUSD(stringToFloat(data.value?.BTC) * (investibleAssets.value * 0.7)))
+const btc = computed(() => formatCrypto(stringToFloat(data.value?.BTC) * (investibleAssets.value * 0.7)))
 /** The amount of ETH crypto currency you would get for 30% the amount of invested assets  */
-const eth = computed(() => numberToUSD(stringToFloat(data.value?.ETH) * (investibleAssets.value * 0.3)))
+const eth = computed(() => formatCrypto(stringToFloat(data.value?.ETH) * (investibleAssets.value * 0.3)))
 
 /** On investibleAssets update, refresh the exchange rate data to get the most up to date rates */
 watch(investibleAssets, async () => {
@@ -25,7 +25,7 @@ watch(investibleAssets, async () => {
       <CurrencyInput
         id="investible-assets"
         v-model="investibleAssets"
-        description="USD amount as holdings to calculate the 70/30 split for BTC and ETH."
+        description="USD amount as holdings for the 70/30 split between BTC and ETH."
         label="Investible Assets"
         name="investible-assets"
       />
@@ -37,6 +37,8 @@ watch(investibleAssets, async () => {
         output-id="btc"
         output-for="investible-assets"
         label="70% BTC Allocation"
+        description="How much BTC to buy with 70% of your investible assets at the current exchange rate."
+        suffix="BTC"
         output-name="btc"
         :value="btc"
         :is-loading="isLoading"
@@ -45,6 +47,9 @@ watch(investibleAssets, async () => {
         output-id="eth"
         output-for="investible-assets"
         label="30% ETH Allocation"
+        description="How much ETH to buy with 30% of your investible assets at the current exchange rate."
+        suffix="ETH"
+
         output-name="eth"
         :value="eth"
         :is-loading="isLoading"

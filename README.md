@@ -13,7 +13,7 @@ A web app that takes in a USD amount as holdings and calculates the 70/30 split 
 ### Styling
 
 - **[Tailwind CSS](https://tailwindcss.com/)** - CSS framework
-- **[Nuxt UI](https://ui.nuxt.com/)** - Tailwind component library for Nuxt to quickly spin up a decent UI
+- **[Nuxt UI](https://ui.nuxt.com/)** - Tailwind component library for Nuxt to quickly spin up a clean UI
 
 ### Data & State Management
 

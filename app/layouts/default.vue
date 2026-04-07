@@ -1,9 +1,9 @@
 <template>
-  <div class="flex flex-col">
+  <div class="flex flex-col min-w-80">
     <UHeader :toggle="false">
       <template #left>
         <NuxtLink to="/">
-          <h1 class="text-2xl font-medium">Crypto Calculator</h1>
+          <h1 class="text-xl sm:text-2xl font-medium">Crypto Calculator</h1>
         </NuxtLink>
       </template>
     </UHeader>

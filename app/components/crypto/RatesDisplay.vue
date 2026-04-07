@@ -11,7 +11,7 @@ const lastUpdatedString = computed(() => {
   <UCard class="w-full">
     <template #header>
       <h2 class="text-base md:text-lg lg:text-xl font-medium">
-        Exchange Rates Per USD
+        Exchange Rates
       </h2>
     </template>
     <div class="flex flex-col gap-4 sm:gap-6 lg:gap-8">
@@ -19,21 +19,27 @@ const lastUpdatedString = computed(() => {
         <LabeledOutput
           output-id="btc-rate"
           output-name="btc-rate"
-          label="BTC"
+          label="BTC Per USD"
+          suffix="BTC"
           :value="data?.BTC"
           :is-loading="isLoading"
         />
         <LabeledOutput
           output-id="eth-rate"
           output-name="eth"
-          label="ETH"
+          label="ETH Per USD"
+          suffix="ETH"
           :value="data?.ETH"
           :is-loading="isLoading"
         />
       </div>
-      <span
+      <p
         class="text-muted text-sm"
-      >Rates as of <span v-if="lastUpdatedAt">{{ lastUpdatedString }}</span></span>
+      >
+        Rates as of <span
+          data-allow-mismatch="text"
+        >{{ lastUpdatedString }}</span>
+      </p>
     </div>
   </UCard>
 </template>
